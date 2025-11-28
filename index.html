@@ -1,43 +1,97 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<title>Synedica</title>
-<style>
-    body {
-        margin: 0;
-        padding: 0;
-        background-color: #f5f5f5;
-        font-family: Arial, sans-serif;
-        text-align: center;
-        color: #222;
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Synedica — Innovating Pharmaceutical Solutions</title>
+  <style>
+    /* Reset simples */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      height: 100%;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: #000;
+      color: #fff;
     }
-    .container {
-        margin-top: 60px;
+
+    /* Container central */
+    .hero {
+      position: relative;
+      width: 100%;
+      min-height: 100vh; /* ocupa a altura inteira da janela */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
     }
-    img {
-        width: 420px;
-        max-width: 90%;
-        border-radius: 10px;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+
+    /* Imagem responsiva cobrindo o fundo do container */
+    .hero img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: auto;
+      min-height: 100%;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+      filter: contrast(1.02) saturate(0.9);
     }
-    h1 {
-        margin-top: 30px;
-        font-size: 36px;
-        letter-spacing: 1px;
+
+    /* Overlay escurecedor para melhorar legibilidade do texto */
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.45));
+      pointer-events: none;
     }
-    h2 {
-        font-size: 20px;
-        color: #555;
-        margin-top: 5px;
+
+    /* Caixa de texto central */
+    .text {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 20px 12px;
+      width: 90%;
+      max-width: 1100px;
     }
-</style>
+
+    .brand {
+      font-size: clamp(28px, 6vw, 72px); /* crescimento responsivo */
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      color: #ffffff;
+      text-shadow: 0 4px 18px rgba(0,0,0,0.6);
+    }
+
+    .tagline {
+      font-size: clamp(14px, 2.4vw, 20px);
+      font-weight: 500;
+      opacity: 0.95;
+      color: #e6f0ff;
+      text-shadow: 0 3px 12px rgba(0,0,0,0.55);
+    }
+
+    /* Responsividade para telas pequenas */
+    @media (max-width: 520px) {
+      .brand { margin-bottom: 8px; }
+      .text { padding: 16px; }
+    }
+  </style>
 </head>
 <body>
-<div class="container">
-    <img src="https://images.unsplash.com/photo-1581091012184-5c4c44c83f59?q=80&w=1200" alt="Laboratório">
-    <h1>Synedica</h1>
-    <h2>Innovating Pharmaceutical Solutions</h2>
-</div>
+  <main class="hero" role="main" aria-label="Imagem de laboratório com nome da empresa">
+    <!-- Ajuste o src se necessário. Caminho atual: /mnt/data/IMG_6232.jpeg -->
+    <img src="/mnt/data/IMG_6232.jpeg" alt="Laboratório moderno">
+    <div class="overlay" aria-hidden="true"></div>
+
+    <div class="text">
+      <div class="brand">Synedica</div>
+      <div class="tagline">Innovating Pharmaceutical Solutions</div>
+    </div>
+  </main>
 </body>
 </html>
