@@ -1,1 +1,1 @@
-# synedicalabs
+# synedicalabs.github.io
